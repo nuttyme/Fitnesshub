@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/about"
-        android:layout_width="350dp"
-        android:layout_height="677dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="This site is a resource for you to learn and expand your understanding of nutrition, fitness, and health. We’ve got a group of enthusiastic experts who are here to help you accomplish your targets."
-        android:textSize="36sp"
+        android:textSize="20sp"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="22dp" />

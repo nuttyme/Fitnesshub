@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TypefaceUtil.overrideFont(getApplicationContext(), "SERIF", "fonts/Whitney_Medium.ttf");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -60,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        healthforum = (Button) findViewById(R.id.healthforum);
+        /* healthforum = (Button) findViewById(R.id.healthforum);
 
         healthforum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent signupIntent = new Intent(HomeActivity.this,healthforum.class);
                 startActivity(signupIntent);
             }
-        });
+        }); */
 
         packages = (Button) findViewById(R.id.packages);
 

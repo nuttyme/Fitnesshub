@@ -61,11 +61,5 @@ tools:context=".LoginActivity">
         android:layout_height="wrap_content"
         android:text="Packages" />
 
-    <Button
-        android:id="@+id/healthforum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Health Forum" />
-
 
 </LinearLayout>

@@ -33,9 +33,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, firstname TEXT, lastname TEXT, height integer, weight integer, email TEXT, mobile TEXT, BMI INTEGER, APPROVED TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, firstname TEXT, lastname TEXT, height integer, weight integer, email TEXT, mobile TEXT, BMI TEXT, APPROVED TEXT, gender TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE health_forum (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, qtitle TEXT, question TEXT, answer TEXT, trainer_id integer)");
-        sqLiteDatabase.execSQL("CREATE TABLE trainers (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE trainers (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, firstname TEXT, lastname TEXT, mobile TEXT, age TEXT, slot TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE packages (ID INTEGER PRIMARY  KEY AUTOINCREMENT, packagename TEXT, description TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE assign_trainer (ID INTEGER PRIMARY  KEY AUTOINCREMENT, member_id INTEGER, member_name TEXT,  trainer_id INTEGER, trainer_name TEXT)");
     }
@@ -60,12 +60,17 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return  res;
     }
 
-    public long addTrainer(String user, String password){
+    public long addTrainer(String user, String password, String firstname, String lastname, String mobile, String age, String slot){
         SQLiteDatabase db = this.getWritableDatabase();
     //    db.execSQL("CREATE TABLE trainers (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT)");
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",user);
         contentValues.put("password",password);
+        contentValues.put("firstname", firstname);
+        contentValues.put("lastname", lastname);
+        contentValues.put("mobile", mobile);
+        contentValues.put("age", age);
+        contentValues.put("slot",slot);
         long res = db.insert("trainers",null,contentValues);
         db.close();
         return  res;
@@ -179,7 +184,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     public Cursor getMembers() {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE username != 'admin' and APPROVED != 'Y' ";
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE username != 'admin' and APPROVED IS NULL ";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
@@ -190,6 +195,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
 
     public Cursor getQuestionID(String name){
 
@@ -233,6 +239,17 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         return data;
     }
 
+    public Cursor getTrainerDetails(String name){
+
+        Log.d(TAG1,"in getTrainerDetails" +name);
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME2 +
+                " WHERE " + COL_2 + " like '%" + name + "%'";
+        Log.d(TAG1,"out getTrainerDetails" + query);
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
 
     public Cursor getUserID(String name){
 
@@ -254,14 +271,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     }
 //db.updateUser(selectedId,l_et_firstname,l_et_lastname,l_et_mobile,l_et_height,l_et_weight ,l_et_email)
 
-    public void updateUser(int id, String answer) {
+    public void updateUser(int id) {
         SQLiteDatabase db1 = this.getWritableDatabase();
         String query = "UPDATE " + TABLE_NAME + " SET APPROVED "
                 + " = '" + "Y" + "' " + " WHERE " + COL_1 + " = '" + id + "' ";
         db1.execSQL(query);
     }
 
-    public void updateUser(int id, String firstname, String lastname, String mobile, String height, String weight, String email) {
+    public void updateUser(int id, String firstname, String lastname, String mobile, String height, String weight, String email, String bmi, String gender) {
         SQLiteDatabase db1 = this.getWritableDatabase();
         String query = "UPDATE " + TABLE_NAME + " SET "
                 + "firstname = '" + firstname + "' "
@@ -270,9 +287,28 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 + ",height = '" + height + "' "
                 + ",weight = '" + weight + "' "
                 + ",email = '" + email + "' "
+                + ",BMI = '" + bmi + "' "
+                + ",gender = '" + gender + "' "
                 + " WHERE " + COL_1 + " = '" + id + "' ";
 
         Log.d(TAG2,"in updateUser" + query);
+        db1.execSQL(query);
+    }
+
+    public Cursor getAssignedTrainer(String memberId){
+
+        Log.d(TAG1,"in getAssignedTrainer" + memberId);
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME4 +
+                " WHERE member_name=" + "'" + memberId + "'";
+        Log.d(TAG1,"out getAssignedTrainer" + query);
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public void deleteTrainer(int id) {
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME2 + " WHERE " + COL_1 + " = '" + id + "' ";
         db1.execSQL(query);
     }
 }

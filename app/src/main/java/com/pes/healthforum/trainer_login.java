@@ -43,6 +43,7 @@ public class trainer_login extends AppCompatActivity {
                 if(res == true)
                 {
                     Intent trainerLandingPage = new Intent(trainer_login.this,trainerLanding.class);
+                    trainerLandingPage.putExtra("trainer_username", user);
                     startActivity(trainerLandingPage);
                 }
                 else

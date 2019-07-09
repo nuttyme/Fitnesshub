@@ -14,7 +14,7 @@ public class registerTrainer extends AppCompatActivity {
     DatabaseHelper db;
     EditText mTextUsername;
     EditText mTextPassword;
-    EditText mTextCnfPassword;
+    EditText mTextCnfPassword, mTextFirstName, mTextLastName, mTextMobile, mTextAge, mTextSlot;
     Button mButtonRegister;
     TextView mTextViewLogin;
     @Override
@@ -26,15 +26,12 @@ public class registerTrainer extends AppCompatActivity {
         mTextUsername = (EditText)findViewById(R.id.edittext_tusername);
         mTextPassword = (EditText)findViewById(R.id.edittext_tpassword);
         mTextCnfPassword = (EditText)findViewById(R.id.edittext_tcnf_password);
+        mTextFirstName = (EditText)findViewById(R.id.edittext_firstname);
+        mTextLastName = (EditText)findViewById(R.id.edittext_lastname);
+        mTextMobile = (EditText)findViewById(R.id.edittext_mobile);
+        mTextAge = (EditText)findViewById(R.id.edittext_age);
+        mTextSlot = (EditText)findViewById(R.id.edittext_slot);
         mButtonRegister = (Button)findViewById(R.id.button_tregister);
-        mTextViewLogin = (TextView)findViewById(R.id.textview_login);
-        mTextViewLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent LoginIntent = new Intent(registerTrainer.this,trainer_login.class);
-                startActivity(LoginIntent);
-            }
-        });
 
         mButtonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,13 +39,18 @@ public class registerTrainer extends AppCompatActivity {
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 String cnf_pwd = mTextCnfPassword.getText().toString().trim();
+                String first_name = mTextFirstName.getText().toString().trim();
+                String last_name = mTextLastName.getText().toString().trim();
+                String mobile = mTextMobile.getText().toString().trim();
+                String age = mTextAge.getText().toString().trim();
+                String slot = mTextSlot.getText().toString().trim();
 
                 if(pwd.equals(cnf_pwd)){
-                    long val = db.addTrainer(user,pwd);
+                    long val = db.addTrainer(user,pwd, first_name, last_name, mobile, age, slot);
                     if(val > 0){
                         Toast.makeText(registerTrainer.this,"You have registered",Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(registerTrainer.this,trainer_login.class);
-                        startActivity(moveToLogin);
+                        Intent moveTohome = new Intent(registerTrainer.this,adminLanding.class);
+                        startActivity(moveTohome);
                     }
                     else{
                         Toast.makeText(registerTrainer.this,"Registeration Error",Toast.LENGTH_SHORT).show();

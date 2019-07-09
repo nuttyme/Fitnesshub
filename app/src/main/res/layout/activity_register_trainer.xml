@@ -9,70 +9,93 @@ android:orientation="vertical"
 android:gravity="center_horizontal"
 tools:context="com.pes.healthforum.registerTrainer">
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="127dp"
-    android:layout_marginTop="50dp"
-    app:srcCompat="@drawable/logo"/>
-
-<EditText
-    android:id="@+id/edittext_tusername"
-    android:layout_width="206dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="10dp"
-    android:paddingLeft="2dp"
-    android:background="#ffffff"
-
-    android:hint="@string/username"/>
-
-<EditText
-    android:id="@+id/edittext_tpassword"
-    android:layout_width="206dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="20dp"
-    android:background="#ffffff"
-
-    android:hint="@string/password"/>
-
-<EditText
-    android:id="@+id/edittext_tcnf_password"
-    android:layout_width="206dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="20dp"
-    android:background="#ffffff"
-
-    android:hint="@string/confirm_password"/>
-<Button
-    android:id="@+id/button_tregister"
-    android:layout_width="206dp"
-    android:layout_height="40dp"
-    android:layout_marginTop="20dp"
-    android:background="#04ea00"
-    android:textColor="#ffffff"
-    android:text="@string/register"/>
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="10dp">
-
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logo"/>
+
+    <EditText
+        android:id="@+id/edittext_tusername"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+
+        android:hint="@string/username"/>
+
+    <EditText
+        android:id="@+id/edittext_tpassword"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+
+        android:hint="@string/password"/>
+
+    <EditText
+        android:id="@+id/edittext_tcnf_password"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+
+        android:hint="@string/confirm_password"/>
+
+    <EditText
+        android:id="@+id/edittext_firstname"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+
+        android:hint="First Name"/>
+
+    <EditText
+        android:id="@+id/edittext_lastname"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+
+        android:hint="Last Name"/>
+
+    <EditText
+        android:id="@+id/edittext_age"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:inputType="number"
+        android:hint="Age"/>
+
+    <EditText
+        android:id="@+id/edittext_mobile"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:inputType="number"
+        android:hint="Mobile"/>
+
+    <EditText
+        android:id="@+id/edittext_slot"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:inputType="text"
+        android:hint="Time Slot"/>
+
+    <Button
+        android:id="@+id/button_tregister"
+        android:layout_width="206dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#04ea00"
         android:textColor="#ffffff"
-        android:text="@string/already_registered"/>
+        android:text="@string/register"/>
 
-    <TextView
-        android:id="@+id/textview_login"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:textColor="#04ea00"
-        android:textSize="16sp"
-        android:text="@string/login"/>
-
-</LinearLayout>
 
 </LinearLayout>

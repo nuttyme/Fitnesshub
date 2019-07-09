@@ -1,45 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/bt_trainerhome"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".trainerLanding"
-tools:layout_editor_absoluteY="81dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bt_trainerhome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".trainerLanding">
 
-<TextView
-    android:id="@+id/tvtHome"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="128dp"
-    android:text="Welcome Trainer"
-    android:textSize="20sp"
-    android:textStyle="bold|italic"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvtHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Trainer"
+        android:layout_margin="40dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
 
-<Button
-    android:id="@+id/bt_members"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="8dp"
-    android:layout_marginLeft="8dp"
-    android:text="Members"
-    app:layout_constraintBaseline_toBaselineOf="@+id/bt_aquestions"
-    app:layout_constraintEnd_toStartOf="@+id/bt_aquestions"
-    app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:padding="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-<Button
-    android:id="@+id/bt_aquestions"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="62dp"
-    android:text="Answer Questions"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-/>
-</android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="User Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="164dp" />
+
+
+        <TextView
+            android:id="@+id/tvFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="5dp"
+            android:inputType="textPersonName"
+            android:text="First Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <TextView
+            android:id="@+id/tvLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="5dp"
+            android:inputType="textPersonName"
+            android:text="Last Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="237dp" />
+
+
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Mobile"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="344dp" />
+
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Age"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_members"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Members"
+                app:layout_constraintBaseline_toBaselineOf="@+id/bt_aquestions"
+                app:layout_constraintEnd_toStartOf="@+id/bt_aquestions"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/bt_aquestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="62dp"
+                android:text="Answer Questions"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

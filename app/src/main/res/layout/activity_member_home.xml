@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".memberHome"
 >
 
@@ -13,14 +14,16 @@
         android:id="@+id/tvHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
         android:text="Welcome to Health Forum"
         android:textSize="20sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="302dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
 
@@ -36,10 +39,23 @@
             tools:layout_editor_absoluteY="164dp" />
 
         <TextView
+            android:id="@+id/tvApproved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="5dp"
+            android:inputType="textPersonName"
+            android:text="User Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <TextView
             android:id="@+id/tvFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5dp"
             android:inputType="textPersonName"
             android:text="First Name"
             android:textSize="18sp"
@@ -51,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5dp"
             android:inputType="textPersonName"
             android:text="Last Name"
             android:textSize="18sp"
@@ -64,6 +81,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="     "
+            android:layout_marginTop="5dp"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="290dp" />
@@ -76,6 +94,7 @@
             android:inputType="textPersonName"
             android:text="Mobile"
             android:textSize="18sp"
+            android:layout_marginTop="5dp"
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="344dp" />
 
@@ -87,6 +106,7 @@
             android:inputType="textPersonName"
             android:text="Weight"
             android:textSize="18sp"
+            android:layout_marginTop="5dp"
             tools:layout_editor_absoluteX="35dp"
             tools:layout_editor_absoluteY="396dp" />
 
@@ -98,6 +118,7 @@
             android:inputType="textPersonName"
             android:text="Height"
             android:textSize="18sp"
+            android:layout_marginTop="5dp"
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="449dp" />
 
@@ -109,6 +130,30 @@
             android:inputType="textPersonName"
             android:text="Email"
             android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+        <TextView
+            android:id="@+id/tvBmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="BMI"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+
+        <TextView
+            android:id="@+id/tvTrainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Trainer not assigned"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
             tools:layout_editor_absoluteX="37dp"
             tools:layout_editor_absoluteY="449dp" />
 
@@ -116,25 +161,23 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
     <Button
         android:id="@+id/bt_profile_update"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
         android:text="Update Profile"
  />
 
     <Button
         android:id="@+id/bt_cquestions"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="62dp"
+        android:layout_weight="1"
         android:text="Ask Questions"
 
   />

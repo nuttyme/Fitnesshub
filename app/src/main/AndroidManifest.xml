@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".trainerMembers"></activity>
+        <activity android:name=".confirmRemoveTrainer"></activity>
+        <activity android:name=".trainerMembers" />
         <activity android:name=".assignTrainer" />
         <activity android:name=".editUser" />
         <activity android:name=".approveMember" />
@@ -35,6 +36,7 @@
         <activity android:name=".listPackages" />
         <activity android:name=".addPackage" />
         <activity android:name=".editQuestion" />
+        <activity android:name=".removeTrainer" />
     </application>
 
 </manifest>

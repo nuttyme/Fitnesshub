@@ -14,52 +14,58 @@ android:background="#123456"
 tools:context=".adminLanding">
 
 
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="127dp"
-    android:layout_marginTop="50dp"
-    app:srcCompat="@drawable/logo"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="127dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/logo"/>
 
-<!-- Login progress -->
-<ProgressBar
-    android:id="@+id/login_progress"
-    style="?android:attr/progressBarStyleLarge"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    android:visibility="gone" />
-
-
-<Button
-    android:id="@+id/btnaddtrainer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Add Trainer" />
-
-<Button
-    android:id="@+id/btnapprovecustomer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Approve Customer" />
-
-<Button
-    android:id="@+id/btnassigntrainer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Assign Trainer" />
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
 
-<Button
-    android:id="@+id/btnaddpackage"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Add Package" />
+        <Button
+            android:id="@+id/btnaddtrainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Trainer" />
 
-<Button
-    android:id="@+id/btnhealthforum"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Health Forum" />
+        <Button
+            android:id="@+id/btnremovetrainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Trainer" />
+
+        <Button
+            android:id="@+id/btnapprovecustomer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Approve Customer" />
+
+        <Button
+            android:id="@+id/btnassigntrainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assign Trainer" />
+
+
+        <Button
+            android:id="@+id/btnaddpackage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Package" />
+
+        <Button
+            android:id="@+id/btnhealthforum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Health Forum" />
 
 
 </LinearLayout>

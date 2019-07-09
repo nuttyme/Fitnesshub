@@ -23,7 +23,7 @@ public class assignTrainer extends AppCompatActivity {
     private ListView memberslv;
     private ListView trainerslv;
     private static final String TAG = "assignTrainer";
-Button btn_save;
+    Button btn_save;
     EditText et_member, et_trainer;
 
 
@@ -31,7 +31,8 @@ Button btn_save;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assign_trainer);
-
+        et_member = (EditText)findViewById(R.id.et_at_member);
+        et_trainer = (EditText)findViewById(R.id.et_at_trainer);
         memberslv = (ListView) findViewById(R.id.lv_at_members);
         trainerslv = (ListView) findViewById(R.id.lv_at_trainers);
         db = new DatabaseHelper(this);

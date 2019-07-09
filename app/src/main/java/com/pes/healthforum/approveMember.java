@@ -25,50 +25,49 @@ public class approveMember extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_approve_member);
             memberslv = (ListView) findViewById(R.id.lvMembers);
-            db = new DatabaseHelper(this);
-
             populateMembersListView();
         }
 
 
-    private void populateMembersListView()
-    {
-
-        Cursor data = db.getMembers();
-        ArrayList<String> listData = new ArrayList<>();
-        while(data.moveToNext()){
-            listData.add(data.getString(1));
-     //       listData.add(data.getString(1)+" - "+data.getString(2) +" - "+data.getString(3));
-        }
-
-        ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listData);
-        memberslv.setAdapter(adapter);
-
-        memberslv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                String member = adapterView.getItemAtPosition(position).toString();
-                Log.d(TAG,"memberlist onItem clicked" + member);
-
-                Cursor data = db.getMemberID(member);
-                int itemID = -1;
-//                String question;
-                while(data.moveToNext()){
-                    itemID = data.getInt(0);
-                    //                   question = data.getString(1);
-                }
-                if(itemID > -1){
-                    Log.d(TAG,"onItem clicked, ID is " + itemID);
-                    Intent editQuestionIntent = new Intent(approveMember.this, editUser.class );
-                    editQuestionIntent.putExtra("id",itemID);
-                    editQuestionIntent.putExtra("question",member);
-                    startActivity(editQuestionIntent);
-                }
-                else {
-                    Log.d(TAG," onItem clicked - no item found");
-                }
+        private void populateMembersListView()
+        {
+            db = new DatabaseHelper(this);
+            Cursor data = db.getMembers();
+            ArrayList<String> listData = new ArrayList<>();
+            final ArrayList<String> membersIDs = new ArrayList<>();
+            while(data.moveToNext()){
+                listData.add(data.getString(1)+" : "+data.getString(3) +" "+data.getString(4));
+                membersIDs.add(data.getString(1));
             }
-        });
-    }
+
+            ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listData);
+            memberslv.setAdapter(adapter);
+
+            memberslv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                    String member = membersIDs.get(position).toString();
+                    Log.d(TAG,"memberlist onItem clicked" + member);
+
+                    Cursor data = db.getMemberID(member);
+                    int itemID = -1;
+    //                String question;
+                    while(data.moveToNext()){
+                        itemID = data.getInt(0);
+                        //                   question = data.getString(1);
+                    }
+                    if(itemID > -1){
+                        Log.d(TAG,"onItem clicked, ID is " + itemID);
+                        Intent editQuestionIntent = new Intent(approveMember.this, editUser.class );
+                        editQuestionIntent.putExtra("id",itemID);
+                        editQuestionIntent.putExtra("question",member);
+                        startActivity(editQuestionIntent);
+                    }
+                    else {
+                        Log.d(TAG," onItem clicked - no item found");
+                    }
+                }
+            });
+        }
 }
 

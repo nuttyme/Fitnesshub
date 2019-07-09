@@ -11,9 +11,11 @@ tools:context=".editUser">
 
 
 <LinearLayout
-    android:layout_width="368dp"
-    android:layout_height="137dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="8dp">
 
@@ -22,7 +24,7 @@ tools:context=".editUser">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textSize="36sp"
+        android:textSize="16sp"
         android:text="To Approve the User - Click Save"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="16dp" />
@@ -32,25 +34,17 @@ tools:context=".editUser">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-
+        android:enabled="false"
         android:text="Question"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="16dp" />
 
-    <EditText
-        android:id="@+id/EUeditText_answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Answer"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="16dp" />
 
 </LinearLayout>
 
 <LinearLayout
-    android:layout_width="368dp"
+    android:layout_width="match_parent"
+    android:padding="20dp"
     android:layout_height="407dp"
     android:orientation="horizontal"
     tools:layout_editor_absoluteX="8dp"
@@ -59,7 +53,7 @@ tools:context=".editUser">
 
     <Button
         android:id="@+id/EUbtn_asave"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Save" />

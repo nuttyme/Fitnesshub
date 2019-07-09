@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class adminLanding extends AppCompatActivity {
 
-    Button mButtonAddTrainer;
+    Button mButtonAddTrainer, mButtonRemoveTrainer;
     Button mButtonAddPackage, healthforum,approveMember, assignTrainer;
 
     @Override
@@ -24,6 +24,17 @@ public class adminLanding extends AppCompatActivity {
             public void onClick(View view) {
                 Intent registerIntent = new Intent(adminLanding.this, registerTrainer.class);
                 startActivity(registerIntent);
+            }
+        });
+
+        mButtonRemoveTrainer = (Button) findViewById(R.id.btnremovetrainer);
+
+
+        mButtonRemoveTrainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent removeTrainerIntent = new Intent(adminLanding.this, removeTrainer.class);
+                startActivity(removeTrainerIntent);
             }
         });
 

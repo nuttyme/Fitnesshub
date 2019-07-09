@@ -10,10 +10,11 @@
 
     <TextView
         android:id="@+id/tv_at_heading"
-android:textSize="20sp"
+        android:textSize="16sp"
         android:layout_width="334dp"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
-
+        android:layout_gravity="center_horizontal"
         android:text="Assign Trainer to Members here. Choose a Member and then a Trainer and click Save" />
 
     <TextView
@@ -21,22 +22,22 @@ android:textSize="20sp"
         android:textSize="20sp"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
-
         android:text="     " />
 
 
     <TextView
-        android:id="@+id/tv_at_heading"
-        android:textSize="24sp"
-        android:layout_width="334dp"
+        android:id="@+id/tv_at_member_heading"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
-
         android:text="Members List" />
 
     <ListView
+        android:layout_margin="10dp"
         android:id="@+id/lv_at_members"
-        android:layout_width="wrap_content"
-        android:layout_height="91dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
     <TextView
@@ -44,23 +45,26 @@ android:textSize="20sp"
         android:textSize="20sp"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
-
         android:text="     " />
+
     <TextView
-        android:id="@+id/tv_at_heading"
-        android:textSize="24sp"
+        android:id="@+id/tv_at_list_heading"
+        android:textSize="14sp"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
-
+        android:layout_margin="20dp"
         android:text="Trainer List" />
 
     <ListView
+        android:layout_margin="10dp"
         android:id="@+id/lv_at_trainers"
         android:layout_width="wrap_content"
         android:layout_height="93dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="71dp">
 
         <EditText
@@ -68,8 +72,9 @@ android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_weight="1"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Member ID" />
 
 
         <EditText
@@ -77,14 +82,16 @@ android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_weight="1"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Trainer ID" />
 
 
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_at_save"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save" />
