@@ -1,197 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".updateProfile"
-    android:orientation="vertical"
-    android:padding="20dp"
-    >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="wrap_content">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="363dp"
-        android:layout_height="28dp"
-        android:text="Update your profile here"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="30dp" />
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="69dp">
-
-        <EditText
-            android:id="@+id/etUPUserName"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="User Name"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="164dp" />
+            android:layout_height="match_parent"
+            tools:context=".updateProfile"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
 
-        <EditText
-            android:id="@+id/etUPFirstName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="First Name"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="164dp" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="363dp"
+                android:layout_height="28dp"
+                android:text="Update your profile here"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="30dp" />
 
-        <EditText
-            android:id="@+id/etUPLastName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Last Name"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="237dp" />
-
-        <EditText
-            android:id="@+id/etUPGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Gender"
-            android:visibility="gone"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="290dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"
-            android:text="Gender"/>
-
-        <RadioGroup
-            android:id="@+id/gender"
-            android:tooltipText="Gender"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/male"
-                android:checked="true"
-                android:text="Male"/>
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="69dp">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/female"
-                android:text="Female"/>
+                <EditText
+                    android:id="@+id/etUPUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="User Name"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="164dp" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/other"
-                android:text="Other"/>
+                <EditText
+                    android:id="@+id/etUPFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="First Name"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="164dp" />
 
-        </RadioGroup>
+                <EditText
+                    android:id="@+id/etUPLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Last Name"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="237dp" />
 
-        <EditText
-            android:id="@+id/etUPMobile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Mobile"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="344dp" />
+                <EditText
+                    android:id="@+id/etUPGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Gender"
+                    android:visibility="gone"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="290dp" />
 
-        <EditText
-            android:id="@+id/etUPWeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Weight (in Kgs) "
-            tools:layout_editor_absoluteX="35dp"
-            tools:layout_editor_absoluteY="396dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="Gender"/>
 
-        <EditText
-            android:id="@+id/etUPHeight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:hint="Height (in cms)"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="449dp" />
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:tooltipText="Gender"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/etUPEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:hint="Email"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="449dp" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/male"
+                        android:checked="true"
+                        android:text="Male"/>
 
-        <EditText
-            android:id="@+id/etDOJ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Date of joining"
-            android:focusable="false"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="449dp" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/female"
+                        android:text="Female"/>
 
-        <Spinner
-            android:id="@+id/spinner_packages"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/other"
+                        android:text="Other"/>
 
-        <Spinner
-            android:id="@+id/spinner_slots"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+                </RadioGroup>
 
-        <TextView
-            android:id="@+id/etUPBMI"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="BMI" />
+                <EditText
+                    android:id="@+id/etUPMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Mobile"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="344dp" />
 
-        <Button
-            android:layout_marginTop="40dp"
-            android:id="@+id/btnUpdateProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            tools:layout_editor_absoluteX="288dp"
-            tools:layout_editor_absoluteY="455dp" />
+                <EditText
+                    android:id="@+id/etUPWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Weight (in Kgs) "
+                    tools:layout_editor_absoluteX="35dp"
+                    tools:layout_editor_absoluteY="396dp" />
 
+                <EditText
+                    android:id="@+id/etUPHeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Height (in cms)"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="449dp" />
+
+                <EditText
+                    android:id="@+id/etUPEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="449dp" />
+
+                <EditText
+                    android:id="@+id/etDOJ"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Date of joining"
+                    android:focusable="false"
+                    tools:layout_editor_absoluteX="37dp"
+                    tools:layout_editor_absoluteY="449dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_packages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_slots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/etUPBMI"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="BMI" />
+
+                <Button
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/btnUpdateProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    tools:layout_editor_absoluteX="288dp"
+                    tools:layout_editor_absoluteY="455dp" />
+
+
+
+            </LinearLayout>
 
 
     </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
