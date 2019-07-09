@@ -78,9 +78,13 @@ public class updateProfile extends AppCompatActivity implements AdapterView.OnIt
 
         selectedId = receivedIntent.getIntExtra("id", -1);
         selectedMember = receivedIntent.getStringExtra("username");
-
-
         et_username.setText(selectedMember);
+        et_firstname.setText(receivedIntent.getStringExtra("firstname"));
+        et_lastname.setText(receivedIntent.getStringExtra("lastname"));
+        et_mobile.setText(receivedIntent.getStringExtra("mobile"));
+        et_email.setText(receivedIntent.getStringExtra("email"));
+        et_height.setText(receivedIntent.getStringExtra("height"));
+        et_weight.setText(receivedIntent.getStringExtra("weight"));
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
 
@@ -103,8 +107,13 @@ public class updateProfile extends AppCompatActivity implements AdapterView.OnIt
                 // find the radiobutton by returned id
                 genderButton = (RadioButton) findViewById(selectedGenderId);
                 final String gender = genderButton.getText().toString();
+                String bmi_value = "null";
 
-                db.updateUser(selectedId,l_et_firstname,l_et_lastname,l_et_mobile,l_et_height,l_et_weight ,l_et_email, Float.toString(calculateBMI()), gender);
+                if(!l_et_height.equals("null") &&  !l_et_weight.equals("null")){
+                    bmi_value = Float.toString(calculateBMI());
+                }
+
+                db.updateUser(selectedId,l_et_firstname,l_et_lastname,l_et_mobile,l_et_height,l_et_weight ,l_et_email, bmi_value, gender);
 
                 Toast.makeText(updateProfile.this,"Profile Updated",Toast.LENGTH_SHORT).show();
                 Intent moveToLogin = new Intent(updateProfile.this,memberHome.class);
@@ -116,7 +125,7 @@ public class updateProfile extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (!hasFocus) {
-                    if(!et_weight.getText().toString().equals("")){
+                    if((!et_weight.getText().toString().equals("") || !et_weight.getText().toString().equals("null")) && (!et_height.getText().toString().equals("") ||  !et_height.getText().toString().equals("null"))){
                         String bmi_text = "BMI: "+ Float.toString(calculateBMI());
                         txt_bmi.setText(bmi_text);
                     }

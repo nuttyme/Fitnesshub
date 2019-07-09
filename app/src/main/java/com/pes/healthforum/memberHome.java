@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class memberHome extends AppCompatActivity {
     Button mButtonQuestion;
     Button mButtonProfile;
-    Button profile;
+    Button profile, logoutbt, healthfrmbt;
 
     DatabaseHelper db;
     int memberID = -1;
@@ -58,6 +58,8 @@ public class memberHome extends AppCompatActivity {
             mobile = "Mobile: "+ data.getString(8);
             bmi = "BMI: "+data.getString(9);
             String approve_value = data.getString(10);
+            gender = data.getString(11);
+
             txtApproved = (TextView) findViewById(R.id.tvApproved);
             if(approve_value == null){
                 approved  = "Account is not approved";
@@ -102,6 +104,25 @@ public class memberHome extends AppCompatActivity {
         txtBmi.setText(bmi);
 
         mButtonQuestion = (Button)findViewById(R.id.bt_cquestions);
+        logoutbt = (Button)findViewById(R.id.logout);
+        healthfrmbt = (Button)findViewById(R.id.bt_health_forum);
+
+        healthfrmbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signupIntent = new Intent(memberHome.this,healthforum.class);
+                startActivity(signupIntent);
+            }
+        });
+
+        logoutbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signupIntent = new Intent(memberHome.this,HomeActivity.class);
+                startActivity(signupIntent);
+            }
+        });
+
         mButtonQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +147,26 @@ public class memberHome extends AppCompatActivity {
 
                 Intent signupIntent = new Intent(memberHome.this,updateProfile.class);
                 signupIntent.putExtra("id",memberID);
-                signupIntent.putExtra("username",userName.split(":")[1]);
+                signupIntent.putExtra("username",userName.split(":")[1].trim());
+                if(firstName!=null){
+                    signupIntent.putExtra("firstname", firstName.split(":")[1].trim());
+                }
+                if(lastName!=null){
+                    signupIntent.putExtra("lastname", lastName.split(":")[1].trim());
+                }
+                if(height!=null){
+                    signupIntent.putExtra("height", height.split(":")[1].trim());
+                }
+                if(weight!=null){
+                    signupIntent.putExtra("weight", weight.split(":")[1].trim());
+                }
+                if(email!=null){
+                    signupIntent.putExtra("mobile", mobile.split(":")[1].trim());
+                }
+                if(gender!=null){
+                    signupIntent.putExtra("gender", gender.split(":")[1].trim());
+                }
+
                 startActivity(signupIntent);
             }
         });

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class trainerLanding extends AppCompatActivity {
 
-     Button healthforum,approveMember;
+     Button healthforum,approveMember, logoutbt, healthfrmbt;
 
      String trainer_username, userName, firstName, lastName, mobile, age;
 
@@ -67,6 +67,25 @@ public class trainerLanding extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent signupIntent = new Intent(trainerLanding.this,trainerMembers.class);
+                startActivity(signupIntent);
+            }
+        });
+
+        logoutbt = (Button)findViewById(R.id.logout);
+        healthfrmbt = (Button)findViewById(R.id.bt_health_forum);
+
+        healthfrmbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signupIntent = new Intent(trainerLanding.this,healthforum.class);
+                startActivity(signupIntent);
+            }
+        });
+
+        logoutbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent signupIntent = new Intent(trainerLanding.this,HomeActivity.class);
                 startActivity(signupIntent);
             }
         });
