@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".assignTrainer">
+
+
+    <TextView
+        android:id="@+id/tv_at_heading"
+android:textSize="20sp"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+
+        android:text="Assign Trainer to Members here. Choose a Member and then a Trainer and click Save" />
+
+    <TextView
+        android:id="@+id/tv_gap1"
+        android:textSize="20sp"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+
+        android:text="     " />
+
+
+    <TextView
+        android:id="@+id/tv_at_heading"
+        android:textSize="24sp"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+
+        android:text="Members List" />
+
+    <ListView
+        android:id="@+id/lv_at_members"
+        android:layout_width="wrap_content"
+        android:layout_height="91dp" />
+
+
+    <TextView
+        android:id="@+id/tv_gap2"
+        android:textSize="20sp"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+
+        android:text="     " />
+    <TextView
+        android:id="@+id/tv_at_heading"
+        android:textSize="24sp"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+
+        android:text="Trainer List" />
+
+    <ListView
+        android:id="@+id/lv_at_trainers"
+        android:layout_width="wrap_content"
+        android:layout_height="93dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="71dp">
+
+        <EditText
+            android:id="@+id/et_at_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+
+        <EditText
+            android:id="@+id/et_at_trainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_at_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+
+</LinearLayout>

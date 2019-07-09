@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bt_uprofile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".memberHome"
+>
+
+    <TextView
+        android:id="@+id/tvHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Welcome to Health Forum"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="302dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="User Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <TextView
+            android:id="@+id/tvFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="First Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="164dp" />
+
+        <TextView
+            android:id="@+id/tvLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Last Name"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="237dp" />
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="     "
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <TextView
+            android:id="@+id/tvMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Mobile"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="344dp" />
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Weight"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="35dp"
+            tools:layout_editor_absoluteY="396dp" />
+
+        <TextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Height"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Email"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="449dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/bt_profile_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Update Profile"
+ />
+
+    <Button
+        android:id="@+id/bt_cquestions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="62dp"
+        android:text="Ask Questions"
+
+  />
+    </LinearLayout>
+</LinearLayout>

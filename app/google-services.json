@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "874439162603",
+    "firebase_url": "https://fitnesshub-46c2f.firebaseio.com",
+    "project_id": "fitnesshub-46c2f",
+    "storage_bucket": "fitnesshub-46c2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874439162603:android:71cfad94461a2a09",
+        "android_client_info": {
+          "package_name": "com.pes.healthforum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874439162603-ockf4i8sclj6uh3a4g3lui1j708hriqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4NQPm0hwl2pPh-Rvrun9qAFXyZdVBig8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874439162603-ockf4i8sclj6uh3a4g3lui1j708hriqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
