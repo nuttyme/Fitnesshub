@@ -56,7 +56,7 @@ public class trainerLanding extends AppCompatActivity {
         healthforum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signupIntent = new Intent(trainerLanding.this,healthforum.class);
+                Intent signupIntent = new Intent(trainerLanding.this, AnswerQuestion.class);
                 startActivity(signupIntent);
             }
         });

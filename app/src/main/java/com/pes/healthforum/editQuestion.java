@@ -15,7 +15,7 @@ public class editQuestion extends AppCompatActivity {
 
     DatabaseHelper db;
 
-    private int selectedId;
+    private String selectedId;
     private String selectedQuestion;
 
     @Override
@@ -33,7 +33,7 @@ public class editQuestion extends AppCompatActivity {
         Intent receivedIntent = getIntent();
 
 
-        selectedId = receivedIntent.getIntExtra("id", -1);
+        selectedId = receivedIntent.getStringExtra("id");
         selectedQuestion = receivedIntent.getStringExtra("question");
 
 
@@ -43,10 +43,10 @@ public class editQuestion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String answer = et_answer.getText().toString();
-                db.updateAnswer(selectedId,answer);
+                db.updateAnswer(Integer.parseInt(selectedId),answer);
 
                 Toast.makeText(editQuestion.this, "Saved", Toast.LENGTH_SHORT).show();
-                Intent moveToMemberHome = new Intent(editQuestion.this, trainerLanding.class);
+                Intent moveToMemberHome = new Intent(editQuestion.this, AnswerQuestion.class);
                 startActivity(moveToMemberHome);
             }
         });

@@ -54,11 +54,11 @@ public class askQuestion extends AppCompatActivity {
 
                 long val = db.addQuestion(value, qtitle, question);
                 if (val > 0) {
-                    Toast.makeText(askQuestion.this, "You have registered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(askQuestion.this, "Question submitted", Toast.LENGTH_SHORT).show();
                     Intent moveToMemberHome = new Intent(askQuestion.this, memberHome.class);
                     startActivity(moveToMemberHome);
                 } else {
-                    Toast.makeText(askQuestion.this, "Registeration Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(askQuestion.this, "Submission error", Toast.LENGTH_SHORT).show();
                 }
 
 
