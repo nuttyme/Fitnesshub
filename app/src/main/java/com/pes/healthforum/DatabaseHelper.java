@@ -33,9 +33,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, firstname TEXT, lastname TEXT, height integer, weight integer, email TEXT, mobile TEXT, BMI TEXT, APPROVED TEXT, gender TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT, firstname TEXT, lastname TEXT, height integer, weight integer, email TEXT, mobile TEXT, BMI TEXT, APPROVED TEXT, gender TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE health_forum (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, qtitle TEXT, question TEXT, answer TEXT, trainer_id integer)");
-        sqLiteDatabase.execSQL("CREATE TABLE trainers (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT, password TEXT, firstname TEXT, lastname TEXT, mobile TEXT, age TEXT, slot TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE trainers (ID INTEGER PRIMARY  KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT, firstname TEXT, lastname TEXT, mobile TEXT, age TEXT, slot TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE packages (ID INTEGER PRIMARY  KEY AUTOINCREMENT, packagename TEXT, description TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE assign_trainer (ID INTEGER PRIMARY  KEY AUTOINCREMENT, member_id INTEGER, member_name TEXT,  trainer_id INTEGER, trainer_name TEXT)");
     }

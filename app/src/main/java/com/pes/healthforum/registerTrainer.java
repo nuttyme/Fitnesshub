@@ -46,16 +46,20 @@ public class registerTrainer extends AppCompatActivity {
                 String slot = mTextSlot.getText().toString().trim();
 
                 if(pwd.equals(cnf_pwd)){
-                    long val = db.addTrainer(user,pwd, first_name, last_name, mobile, age, slot);
-                    if(val > 0){
-                        Toast.makeText(registerTrainer.this,"You have registered",Toast.LENGTH_SHORT).show();
-                        Intent moveTohome = new Intent(registerTrainer.this,adminLanding.class);
-                        startActivity(moveTohome);
+                    try{
+                        long val = db.addTrainer(user,pwd, first_name, last_name, mobile, age, slot);
+                        if(val > 0){
+                            Toast.makeText(registerTrainer.this,"You have registered",Toast.LENGTH_SHORT).show();
+                            Intent moveTohome = new Intent(registerTrainer.this,adminLanding.class);
+                            startActivity(moveTohome);
+                        }
+                        else{
+                            Toast.makeText(registerTrainer.this,"Registeration Error or User already exists",Toast.LENGTH_SHORT).show();
+                        }
                     }
-                    else{
-                        Toast.makeText(registerTrainer.this,"Registeration Error",Toast.LENGTH_SHORT).show();
+                    catch (Exception e) {
+                        Toast.makeText(registerTrainer.this, "User already exists", Toast.LENGTH_SHORT).show();
                     }
-
                 }
                 else{
                     Toast.makeText(registerTrainer.this,"Password is not matching",Toast.LENGTH_SHORT).show();
