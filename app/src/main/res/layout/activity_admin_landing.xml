@@ -66,6 +66,11 @@ tools:context=".adminLanding">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Health Forum" />
+        <Button
+            android:id="@+id/btnlogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout" />
 
 
 </LinearLayout>
