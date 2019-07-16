@@ -10,7 +10,8 @@ public class adminLanding extends AppCompatActivity {
 
     Button mButtonAddTrainer, mButtonRemoveTrainer;
     Button mButtonAddPackage, healthforum,approveMember, assignTrainer;
-
+    Button mbtnLogout; 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,16 @@ public class adminLanding extends AppCompatActivity {
             public void onClick(View v) {
                 Intent signupIntent = new Intent(adminLanding.this,assignTrainer.class);
                 startActivity(signupIntent);
+            }
+        });
+        
+        mbtnLogout = (Button)findViewById(R.id.btnlogout);
+
+        mbtnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent logoutIntent = new Intent(adminLanding.this,HomeActivity.class);
+                startActivity(logoutIntent);
             }
         });
     }
